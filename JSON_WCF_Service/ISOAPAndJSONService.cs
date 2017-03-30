@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 
@@ -14,9 +15,11 @@ namespace JSON_WCF_Service
     public interface ISOAPAndJSONService
     {
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "DoStuff", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Output DoStuff(Input input);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "DoOtherStuff", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Output DoOtherStuff(Input input);
     }
 }

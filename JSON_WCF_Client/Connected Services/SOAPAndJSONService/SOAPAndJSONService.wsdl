@@ -29,7 +29,7 @@
       <wsdl:output wsaw:Action="http://tempuri.org/ISOAPAndJSONService/DoOtherStuffResponse" message="tns:ISOAPAndJSONService_DoOtherStuff_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="BasicHttpBinding_ISOAPAndJSONService" type="tns:ISOAPAndJSONService">
+  <wsdl:binding name="soap" type="tns:ISOAPAndJSONService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="DoStuff">
       <soap:operation soapAction="http://tempuri.org/ISOAPAndJSONService/DoStuff" style="document" />
@@ -51,8 +51,8 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="SOAPAndJSONService">
-    <wsdl:port name="BasicHttpBinding_ISOAPAndJSONService" binding="tns:BasicHttpBinding_ISOAPAndJSONService">
-      <soap:address location="http://localhost:61182/SOAPAndJSONService.svc" />
+    <wsdl:port name="soap" binding="tns:soap">
+      <soap:address location="http://localhost:61182/SOAPAndJSONService.svc/soap" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

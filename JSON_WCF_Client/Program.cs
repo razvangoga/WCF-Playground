@@ -12,12 +12,21 @@ namespace JSON_WCF_Client
     {
         static void Main(string[] args)
         {
-            using (SOAPAndJSONServiceClient client = new SOAPAndJSONServiceClient())
+            using (SOAPAndJSONServiceClient soapClient = new SOAPAndJSONServiceClient("soap"))
             {
-                Output output1 = client.DoStuff(new Input() { Info = "bubu", Reversed = false });
+                Output output1 = soapClient.DoStuff(new Input() { Info = "bubu", Reversed = false });
                 Console.WriteLine(output1.ToString());
 
-                Output output2 = client.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
+                Output output2 = soapClient.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
+                Console.WriteLine(output2.ToString());
+            }
+
+            using (SOAPAndJSONServiceClient soapClient = new SOAPAndJSONServiceClient("json"))
+            {
+                Output output1 = soapClient.DoStuff(new Input() { Info = "bubu", Reversed = false });
+                Console.WriteLine(output1.ToString());
+
+                Output output2 = soapClient.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
                 Console.WriteLine(output2.ToString());
             }
 
