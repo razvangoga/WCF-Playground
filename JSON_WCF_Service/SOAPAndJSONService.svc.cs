@@ -42,5 +42,19 @@ namespace JSON_WCF_Service
                 Type = FileType.Other
             };
         }
+
+        public Output GetExample()
+        {
+            {
+                string example = "example";
+
+                return new Output()
+                {
+                    SomeString = example,
+                    SomeByteArray = Encoding.ASCII.GetBytes(example),
+                    Type = FileType.Unknown
+                };
+            }
+        }
     }
 }

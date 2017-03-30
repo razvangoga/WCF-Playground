@@ -25,7 +25,8 @@ namespace JSON_WCF_Model
 
     public enum FileType
     {
+        Unknown = 0,
         Html = 1,
-        Other = 2
+        Other = 2,
     }
 }

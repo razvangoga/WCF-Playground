@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:61182/SOAPAndJSONService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/JSON_WCF_Model" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="ISOAPAndJSONService_GetExample_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExample" />
+  </wsdl:message>
+  <wsdl:message name="ISOAPAndJSONService_GetExample_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExampleResponse" />
+  </wsdl:message>
   <wsdl:message name="ISOAPAndJSONService_DoStuff_InputMessage">
     <wsdl:part name="parameters" element="tns:DoStuff" />
   </wsdl:message>
@@ -20,6 +26,10 @@
     <wsdl:part name="parameters" element="tns:DoOtherStuffResponse" />
   </wsdl:message>
   <wsdl:portType name="ISOAPAndJSONService">
+    <wsdl:operation name="GetExample">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISOAPAndJSONService/GetExample" message="tns:ISOAPAndJSONService_GetExample_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISOAPAndJSONService/GetExampleResponse" message="tns:ISOAPAndJSONService_GetExample_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DoStuff">
       <wsdl:input wsaw:Action="http://tempuri.org/ISOAPAndJSONService/DoStuff" message="tns:ISOAPAndJSONService_DoStuff_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISOAPAndJSONService/DoStuffResponse" message="tns:ISOAPAndJSONService_DoStuff_OutputMessage" />
@@ -31,6 +41,15 @@
   </wsdl:portType>
   <wsdl:binding name="soap" type="tns:ISOAPAndJSONService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetExample">
+      <soap:operation soapAction="http://tempuri.org/ISOAPAndJSONService/GetExample" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DoStuff">
       <soap:operation soapAction="http://tempuri.org/ISOAPAndJSONService/DoStuff" style="document" />
       <wsdl:input>

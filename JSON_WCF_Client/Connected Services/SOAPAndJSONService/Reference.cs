@@ -15,6 +15,12 @@ namespace JSON_WCF_Client.SOAPAndJSONService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SOAPAndJSONService.ISOAPAndJSONService")]
     public interface ISOAPAndJSONService {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISOAPAndJSONService/GetExample", ReplyAction="http://tempuri.org/ISOAPAndJSONService/GetExampleResponse")]
+        JSON_WCF_Model.Output GetExample();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISOAPAndJSONService/GetExample", ReplyAction="http://tempuri.org/ISOAPAndJSONService/GetExampleResponse")]
+        System.Threading.Tasks.Task<JSON_WCF_Model.Output> GetExampleAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISOAPAndJSONService/DoStuff", ReplyAction="http://tempuri.org/ISOAPAndJSONService/DoStuffResponse")]
         JSON_WCF_Model.Output DoStuff(JSON_WCF_Model.Input input);
         
@@ -53,6 +59,14 @@ namespace JSON_WCF_Client.SOAPAndJSONService {
         
         public SOAPAndJSONServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public JSON_WCF_Model.Output GetExample() {
+            return base.Channel.GetExample();
+        }
+        
+        public System.Threading.Tasks.Task<JSON_WCF_Model.Output> GetExampleAsync() {
+            return base.Channel.GetExampleAsync();
         }
         
         public JSON_WCF_Model.Output DoStuff(JSON_WCF_Model.Input input) {

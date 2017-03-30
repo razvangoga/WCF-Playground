@@ -15,6 +15,11 @@ namespace JSON_WCF_Service
     public interface ISOAPAndJSONService
     {
         [OperationContract]
+        //HACK : this should be a GET but the Proxt Client seams to only issue posts
+        [WebInvoke(Method = "POST", UriTemplate = "GetExample", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
+        Output GetExample();
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "DoStuff", ResponseFormat = WebMessageFormat.Json, RequestFormat = WebMessageFormat.Json)]
         Output DoStuff(Input input);
 

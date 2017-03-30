@@ -3,6 +3,7 @@ using JSON_WCF_Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,22 +13,42 @@ namespace JSON_WCF_Client
     {
         static void Main(string[] args)
         {
-            using (SOAPAndJSONServiceClient soapClient = new SOAPAndJSONServiceClient("soap"))
+            try
             {
-                Output output1 = soapClient.DoStuff(new Input() { Info = "bubu", Reversed = false });
-                Console.WriteLine(output1.ToString());
+                using (SOAPAndJSONServiceClient soapClient = new SOAPAndJSONServiceClient("soap"))
+                {
+                    Output example = soapClient.GetExample();
+                    Console.WriteLine(example);
 
-                Output output2 = soapClient.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
-                Console.WriteLine(output2.ToString());
+                    Output output1 = soapClient.DoStuff(new Input() { Info = "bubu", Reversed = false });
+                    Console.WriteLine(output1.ToString());
+
+                    Output output2 = soapClient.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
+                    Console.WriteLine(output2.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("SOAP client failed : {0}", ex.ToString());
             }
 
-            using (SOAPAndJSONServiceClient soapClient = new SOAPAndJSONServiceClient("json"))
+            try
             {
-                Output output1 = soapClient.DoStuff(new Input() { Info = "bubu", Reversed = false });
-                Console.WriteLine(output1.ToString());
+                using (SOAPAndJSONServiceClient jsonClient = new SOAPAndJSONServiceClient("json"))
+                {
+                    Output example = jsonClient.GetExample();
+                    Console.WriteLine(example);
 
-                Output output2 = soapClient.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
-                Console.WriteLine(output2.ToString());
+                    Output output1 = jsonClient.DoStuff(new Input() { Info = "bubu", Reversed = false });
+                    Console.WriteLine(output1.ToString());
+
+                    Output output2 = jsonClient.DoOtherStuff(new Input() { Info = "lulu", Reversed = true });
+                    Console.WriteLine(output2.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("JSON client failed : {0}", ex.ToString());
             }
 
             Console.WriteLine("Done...");
