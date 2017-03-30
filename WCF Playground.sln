@@ -3,8 +3,42 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSON WCF", "JSON WCF", "{F11C3B6B-B67F-450F-9399-7E3B05EAF8A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON_WCF_Service", "JSON_WCF_Service\JSON_WCF_Service.csproj", "{532C6415-F970-4A6B-B0D3-3B5850E195FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON_WCF_Client", "JSON_WCF_Client\JSON_WCF_Client.csproj", "{BE04A9E3-4D7B-4D03-85A5-A8F7A03857C7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{532C6415-F970-4A6B-B0D3-3B5850E195FF} = {532C6415-F970-4A6B-B0D3-3B5850E195FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON_WCF_Model", "JSON_WCF_Model\JSON_WCF_Model.csproj", "{DE775580-45FF-4846-9D35-D1296B4ADE1F}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{532C6415-F970-4A6B-B0D3-3B5850E195FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{532C6415-F970-4A6B-B0D3-3B5850E195FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{532C6415-F970-4A6B-B0D3-3B5850E195FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{532C6415-F970-4A6B-B0D3-3B5850E195FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE04A9E3-4D7B-4D03-85A5-A8F7A03857C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE04A9E3-4D7B-4D03-85A5-A8F7A03857C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE04A9E3-4D7B-4D03-85A5-A8F7A03857C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE04A9E3-4D7B-4D03-85A5-A8F7A03857C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE775580-45FF-4846-9D35-D1296B4ADE1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE775580-45FF-4846-9D35-D1296B4ADE1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE775580-45FF-4846-9D35-D1296B4ADE1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE775580-45FF-4846-9D35-D1296B4ADE1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{532C6415-F970-4A6B-B0D3-3B5850E195FF} = {F11C3B6B-B67F-450F-9399-7E3B05EAF8A2}
+		{BE04A9E3-4D7B-4D03-85A5-A8F7A03857C7} = {F11C3B6B-B67F-450F-9399-7E3B05EAF8A2}
+		{DE775580-45FF-4846-9D35-D1296B4ADE1F} = {F11C3B6B-B67F-450F-9399-7E3B05EAF8A2}
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a7657b31-8307-4172-8f4c-5fdfba6a18ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="JSON_WCF_Model" />
+    </ReferencedAssemblies>
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:61182/SOAPAndJSONService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SOAPAndJSONService.xsd" MetadataType="Schema" ID="98fda39e-7d14-4844-af69-cfdae46cfd80" SourceId="1" SourceUrl="http://localhost:61182/SOAPAndJSONService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SOAPAndJSONService.wsdl" MetadataType="Wsdl" ID="dc69233a-518d-48e8-997c-1625317d5dab" SourceId="1" SourceUrl="http://localhost:61182/SOAPAndJSONService.svc?wsdl" />
+    <MetadataFile FileName="SOAPAndJSONService.disco" MetadataType="Disco" ID="cea78361-4120-4da7-ac75-6bfe139b74e5" SourceId="1" SourceUrl="http://localhost:61182/SOAPAndJSONService.svc?disco" />
+    <MetadataFile FileName="SOAPAndJSONService1.xsd" MetadataType="Schema" ID="0546a20f-fee2-4cd3-abb9-68cbe6fd1eb9" SourceId="1" SourceUrl="http://localhost:61182/SOAPAndJSONService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SOAPAndJSONService2.xsd" MetadataType="Schema" ID="b520f04e-b024-46cd-81b8-da802df5cc5f" SourceId="1" SourceUrl="http://localhost:61182/SOAPAndJSONService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
